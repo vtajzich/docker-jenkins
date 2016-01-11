@@ -1,13 +1,13 @@
-FROM debian:jessie
-MAINTAINER Allan Espinosa "allan.espinosa@outlook.com"
+FROM vtajzich/java:oracle-java8
 
 RUN apt-get update && \
-    apt-get --no-install-recommends install -q -y openjdk-7-jre-headless && \
-    rm -rf /var/lib/apt/lists/*
-ADD http://mirrors.jenkins-ci.org/war/1.643/jenkins.war /opt/jenkins.war
+    apt-get install -y git
+ADD http://mirrors.jenkins-ci.org/war/1.644/jenkins.war /opt/jenkins.war
+
+VOLUME ["/jenkins"]
+
 RUN chmod 644 /opt/jenkins.war
 ENV JENKINS_HOME /jenkins
 
-ENTRYPOINT ["java", "-jar", "/opt/jenkins.war"]
 EXPOSE 8080
-CMD [""]
+CMD ["java", "-jar", "/opt/jenkins.war"]
