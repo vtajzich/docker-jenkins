@@ -13,7 +13,7 @@ RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
 
 USER jenkins
 
-ADD http://mirrors.jenkins-ci.org/war/1.645/jenkins.war /opt/jenkins.war
+ADD http://mirrors.jenkins-ci.org/war/1.646/jenkins.war /opt/jenkins.war
 
 VOLUME ["/jenkins"]
 
