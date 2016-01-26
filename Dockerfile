@@ -6,7 +6,7 @@ RUN apt-get update \
       && apt-get install -y sudo git \
       && rm -rf /var/lib/apt/lists/*
 
-ADD http://updates.jenkins-ci.org/download/war/1.646/jenkins.war /opt/jenkins.war
+ADD http://mirrors.jenkins-ci.org/war/1.644/jenkins.war /opt/jenkins.war
 
 VOLUME ["/jenkins"]
 
