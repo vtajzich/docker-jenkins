@@ -12,5 +12,9 @@ VOLUME ["/jenkins"]
 
 RUN chmod 644 /opt/jenkins.war
 
+RUN locale-gen en_US.UTF-8
+
+ENV LC_ALL en_US.UTF-8
+
 EXPOSE 8080
 CMD ["java", "-jar", "/opt/jenkins.war"]
