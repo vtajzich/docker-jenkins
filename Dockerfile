@@ -16,5 +16,6 @@ RUN locale-gen en_US.UTF-8
 
 ENV LC_ALL en_US.UTF-8
 
-EXPOSE 8080
+EXPOSE 8080 5005
+
 CMD ["java", "-jar", "/opt/jenkins.war"]
