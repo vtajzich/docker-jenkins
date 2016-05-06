@@ -11,6 +11,8 @@ RUN apt-get update \
 ADD id_rsa /root/.ssh/
 ADD id_rsa.pub /root/.ssh/
 
+RUN chmod 400 /root/.ssh/id_rsa
+
 ADD http://mirrors.jenkins-ci.org/war/1.644/jenkins.war /opt/jenkins.war
 
 VOLUME ["/jenkins"]
